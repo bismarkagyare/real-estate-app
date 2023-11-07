@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-//define a schema for the user: how the data should look like or specify the structure of a user document in mongodb
+// Define a schema for the user: specify the structure of a user document in MongoDB
 const userSchema = new Schema(
   {
     username: {
@@ -18,10 +18,10 @@ const userSchema = new Schema(
       required: true,
     },
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
-//model: a constructor function that corresponds to the collections in the database. provides methods to interact with the collection
+// Create a Mongoose model named 'User' based on the userSchema
 const User = mongoose.model('User', userSchema);
 
 export default User;
