@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRouter from './routes/user.route.js';
 dotenv.config();
 
 //connect to the database using the uri
@@ -15,6 +16,8 @@ mongoose
 
 // create an instance of the express application
 const app = express();
+
+app.use('/api/user', userRouter);
 
 //set up the application to listen on port 3005
 app.listen('3005', () => {
