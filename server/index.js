@@ -23,6 +23,13 @@ app.use(express.json());
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 
+//create error middleware function
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || 'Internal server error';
+  return res.status(statusCode).json({ success: false, message, statusCode });
+});
+
 //set up the application to listen on port 3005
 app.listen('3005', () => {
   console.log('server is running on port 3005');
