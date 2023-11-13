@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../components/OAuth';
 //import axios from 'axios';
 
 const SignUp = () => {
@@ -72,6 +73,7 @@ const SignUp = () => {
         >
           {loading ? 'Loading ...' : 'signup'}
         </button>
+        <OAuth />
       </form>
       <div className="flex justify-center items-center gap-2 mt-5 text-lg">
         <p>Have an account?</p>

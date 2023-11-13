@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 //prettier-ignore
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 const SignIn = () => {
   const [formData, setFormData] = useState({});
@@ -62,6 +63,7 @@ const SignIn = () => {
         >
           {loading ? 'Loading ...' : 'signin'}
         </button>
+        <OAuth />
       </form>
       <div className="flex justify-center items-center gap-2 mt-5 text-lg">
         <p>Dont have an account?</p>
