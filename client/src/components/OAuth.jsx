@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { app } from '../firebase';
 import { useDispatch } from 'react-redux';
@@ -20,8 +19,6 @@ const OAuth = () => {
       //signin with popup with google as the auth provider
       const result = await signInWithPopup(auth, provider);
 
-      //console.log(result);
-
       const response = await fetch('/api/auth/google', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -33,7 +30,7 @@ const OAuth = () => {
       });
 
       const data = await response.json();
-      //console.log(data);
+
       dispatch(signInSuccess(data));
       navigate('/');
     } catch (error) {
@@ -43,8 +40,8 @@ const OAuth = () => {
 
   return (
     <button
-      type="button"
-      className="bg-red-700 text-white p-3 rounded-lg uppercase hover:opacity-95"
+      type='button'
+      className='bg-red-700 text-white p-3 rounded-lg uppercase hover:opacity-95'
       onClick={handleGoogleClick}
     >
       Continue with Google

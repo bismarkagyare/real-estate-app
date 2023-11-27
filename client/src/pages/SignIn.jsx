@@ -40,38 +40,38 @@ const SignIn = () => {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className='p-3 max-w-lg mx-auto'>
+      <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
-          type="email"
+          type='email'
           onChange={handleChange}
-          placeholder="email"
-          id="email"
-          className="border p-3 rounded-lg outline-none"
+          placeholder='email'
+          id='email'
+          className='border p-3 rounded-lg outline-none'
         />
         <input
-          type="password"
+          type='password'
           onChange={handleChange}
-          placeholder="password"
-          id="password"
-          className="border p-3 rounded-lg outline-none"
+          placeholder='password'
+          id='password'
+          className='border p-3 rounded-lg outline-none'
         />
         <button
           disabled={loading}
-          className="bg-slate-700 p-3 uppercase rounded-lg text-white hover:opacity-95 disabled:opacity-80"
+          className='bg-slate-700 p-3 uppercase rounded-lg text-white hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading ...' : 'signin'}
         </button>
         <OAuth />
       </form>
-      <div className="flex justify-center items-center gap-2 mt-5 text-lg">
+      <div className='flex justify-center items-center gap-2 mt-5 text-lg'>
         <p>Dont have an account?</p>
-        <Link to="/sign-up">
-          <span className="text-blue-700">Sign up</span>
+        <Link to='/sign-up'>
+          <span className='text-blue-700'>Sign up</span>
         </Link>
       </div>
-      {error && <p className="text-red-500 mt-5">{error}</p>}
+      {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
   );
 };
