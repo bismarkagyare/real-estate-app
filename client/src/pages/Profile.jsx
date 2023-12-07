@@ -82,19 +82,19 @@ const Profile = () => {
         <input
           type='text'
           placeholder='username'
-          className='border p-3 rounded-lg'
+          className='border p-3 rounded-lg outline-none'
           id='username'
         />
         <input
           type='text'
           placeholder='email'
-          className='border p-3 rounded-lg'
+          className='border p-3 rounded-lg outline-none'
           id='email'
         />
         <input
           type='text'
           placeholder='password'
-          className='border p-3 rounded-lg'
+          className='border p-3 rounded-lg outline-none'
           id='password'
         />
         <button className='bg-slate-700 rounded-lg text-white p-3 uppercase hover:opacity-95 disabled:hover:opacity-80'>
