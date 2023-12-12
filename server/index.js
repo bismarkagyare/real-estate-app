@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
+import cookieParser from 'cookie-parser';
 dotenv.config();
 
 //connect to the database using the uri
@@ -20,6 +21,8 @@ mongoose
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(cookieParser());
 
 //mount these routes at the specific path
 app.use('/api/user', userRouter);
